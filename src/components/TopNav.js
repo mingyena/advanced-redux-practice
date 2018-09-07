@@ -1,5 +1,6 @@
 import React from "react";
 import MessagePreview from "./MessagePreview";
+import { connect } from "react-redux";
 
 function TopNav(props) {
   return (
@@ -66,4 +67,14 @@ function TopNav(props) {
     </ul>);
 }
 
-export default TopNav;
+function mapStateToProps(state) {
+    return {
+      //info is the name of the prop to put something in
+      //.tweets is the name of the reducer that we are getting data from
+      messages: state.messages
+    };
+  }
+  
+  const messages=connect(mapStateToProps)(TopNav) 
+  
+  export default messages;

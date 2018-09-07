@@ -1,5 +1,6 @@
 import React from "react";
 import TransactionRow from "./TransactionRow";
+import { connect } from "react-redux";
 
 function TransactionsPanel(props) {
   return ( 
@@ -35,4 +36,14 @@ function TransactionsPanel(props) {
     </div> );
 }
 
-export default TransactionsPanel;
+function mapStateToProps(state) {
+    return {
+      //info is the name of the prop to put something in
+      //.tweets is the name of the reducer that we are getting data from
+      orders: state.orders
+    };
+  }
+  
+  const orders=connect(mapStateToProps)(TransactionsPanel) 
+  
+export default orders;

@@ -1,5 +1,7 @@
 import React from "react";
 import TaskItem from "./TaskItem";
+import { connect } from "react-redux";
+
 function TasksPanel(props) {
   return (  <div className="panel panel-default">
                 <div className="panel-heading">
@@ -22,4 +24,15 @@ function TasksPanel(props) {
         );
 }
 
-export default TasksPanel;
+function mapStateToProps(state) {
+  return {
+    //info is the name of the prop to put something in
+    //.tweets is the name of the reducer that we are getting data from
+    tasks: state.tasks
+  };
+}
+
+const tasks=connect(mapStateToProps)(TasksPanel) 
+
+export default tasks;
+
