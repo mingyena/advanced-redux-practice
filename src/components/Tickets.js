@@ -26,12 +26,17 @@ function Tickets(props) {
       </div>
     </div>);
 }
-const mapStateToProps = function (state) {
-  return {
-    tickets: state.tickets
-  };
-};
-export default (Tickets);
-// export default connect(mapStateToProps,null)(Tickets);
+
+function mapStateToProps(state) {
+    return {
+      //info is the name of the prop to put something in
+      //.tweets is the name of the reducer that we are getting data from
+      tickets: state.tickets
+    };
+  }
+
+const tickets=connect(mapStateToProps)(Tickets) 
+
+export default tickets;
 
 

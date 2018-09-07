@@ -35,10 +35,10 @@ function App(props) {
               </div>
             </div>
             <div className="row">
-              <Comments newComments={props.newComments} />
-              <Tasks newTasks={props.newTasks} />
-              <Orders newOrders={props.newOrders} />
-              <Tickets tickets={props.tickets} />
+              <Comments/>
+              <Tasks/>
+              <Orders/>
+              <Tickets/>
             </div>
             <AreaChart />
             <div className="row">
@@ -54,7 +54,6 @@ function App(props) {
         </div>
       </div>
     </div>
-
   );
 }
 

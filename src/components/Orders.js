@@ -1,4 +1,5 @@
 import React from "react";
+import {connect} from "react-redux";
 
 function Orders(props) {
   return ( 
@@ -26,4 +27,14 @@ function Orders(props) {
     </div>);
 }
 
-export default Orders;
+function mapStateToProps(state) {
+  return {
+    //info is the name of the prop to put something in
+    //.tweets is the name of the reducer that we are getting data from
+    newOrders: state.newOrders
+  };
+}
+
+const newOrders=connect(mapStateToProps)(Orders) 
+
+export default newOrders;

@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 
 function Comments(props) {
   return ( 
@@ -26,4 +27,14 @@ function Comments(props) {
     </div>);
 }
 
-export default Comments;
+function mapStateToProps(state) {
+    return {
+      //info is the name of the prop to put something in
+      //.tweets is the name of the reducer that we are getting data from
+      newComments: state.newComments
+    };
+  }
+
+const newComment=connect(mapStateToProps)(Comments) 
+
+export default newComment;
